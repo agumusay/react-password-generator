@@ -12,7 +12,6 @@ class PassGenerator extends React.Component {
   onLengthChangeHandler = (e) => {
     const value = e.target.value;
     this.setState({
-      ...this.state,
       [e.target.name]: value,
     });
   };
@@ -46,7 +45,7 @@ class PassGenerator extends React.Component {
       randomPassArray.push(finalString[randomIndex()]);
       userLength--;
     }
-    return randomPassArray.join("");
+    return randomPassArray.join(""); 
   };
 
   onClickHandler = (e) => {
