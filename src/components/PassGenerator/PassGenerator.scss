@@ -1,0 +1,111 @@
+.pass-generator {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-result {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+
+  &-settings {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 20px;
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  &-submit {
+    width: 100%;
+    background-color: #2196f3;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-top: 15px;
+    height: 40px;
+  }
+}
+
+input[type="text"],
+input[type="number"] {
+  height: 30px;
+}
+label {
+  margin: 5px 0px;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  padding-left: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 5px;
+  top: 1px;
+  width: 3px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
